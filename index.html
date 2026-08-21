@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=7">
+<link rel="stylesheet" href="assets/css/style.css?v=8">
 </head>
 <body>
 
@@ -86,10 +86,16 @@
       </div>
 
       <div class="hero-video">
+        <div class="player-tabs" id="playerTabs" hidden role="tablist">
+          <button class="ptab" id="tabLive" type="button" role="tab" aria-selected="true">
+            <span class="live-dot" aria-hidden="true"></span> ถ่ายทอดสด
+          </button>
+          <button class="ptab" id="tabClips" type="button" role="tab" aria-selected="false">คลิปล่าสุด</button>
+        </div>
         <div class="video-frame" id="featuredFrame">
           <div class="video-skeleton" id="featuredSkeleton"><span class="spinner"></span></div>
         </div>
-        <p class="video-caption" id="featuredTitle">กำลังโหลดวิดีโอล่าสุด…</p>
+        <p class="video-caption" id="featuredTitle">กำลังเชื่อมต่อสัญญาณถ่ายทอดสด…</p>
       </div>
     </div>
   </section>
@@ -214,6 +220,7 @@
   </div>
 </footer>
 
-<script src="assets/js/app.js?v=7"></script>
+<script src="assets/js/hls.min.js"></script>
+<script src="assets/js/app.js?v=8"></script>
 </body>
 </html>

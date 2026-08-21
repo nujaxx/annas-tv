@@ -95,6 +95,12 @@
       { title: 'ครอบครัวมุสลิม', desc: 'การเลี้ยงดูบุตร คู่ครอง และมารยาทในบ้าน', icon: 'users', query: 'ครอบครัวมุสลิม' },
       { title: 'ดุอาอ์ & ซิกรุลลอฮ์', desc: 'บทวิงวอนและการรำลึกถึงอัลลอฮ์ในแต่ละวัน', icon: 'sparkle', query: 'ดุอาอ์' }
     ],
+    liveStream: {
+      enabled: true,
+      hlsUrl: 'https://vdo.plathong.net/Annastv/live/playlist.m3u8',
+      label: 'ถ่ายทอดสด 24 ชั่วโมง',
+      note: 'รับชมอันนาสทีวีสดตลอด 24 ชั่วโมง'
+    },
     scheduleNote: 'แสดงเฉพาะรายการที่ออกอากาศสด · ในเดือนรอมฎอนสถานีใช้ผังพิเศษ โปรดติดตามประกาศทางเพจ',
     schedule: [
           {
@@ -378,6 +384,7 @@
       categories: (data.categories && data.categories.length) ? data.categories : DEFAULTS.categories,
       schedule: (data.schedule && data.schedule.length) ? data.schedule : DEFAULTS.schedule,
       scheduleNote: data.scheduleNote || DEFAULTS.scheduleNote,
+      liveStream: assign(DEFAULTS.liveStream, data.liveStream || {}),
       prayer: assign(DEFAULTS.prayer, data.prayer || {})
     };
     render();
@@ -435,7 +442,11 @@
     return cid.indexOf('UC') === 0 ? 'UU' + cid.slice(2) : '';
   }
 
-  function buildFeatured() {
+  var hlsInstance = null;
+
+  /* โหมด "คลิปล่าสุด" — ฝังเพลย์ลิสต์คลิปที่อัปโหลดของช่อง */
+  function showClips() {
+    destroyHls();
     var list = uploadsPlaylistId();
     if (!list) return;
     $('#featuredFrame').innerHTML =
@@ -444,6 +455,99 @@
       'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
       'allowfullscreen></iframe>';
     $('#featuredTitle').textContent = 'คลิปล่าสุดจากช่อง — กดเล่นได้เลย หรือเลื่อนดูคลิปอื่นในเครื่องเล่น';
+    setTab('clips');
+  }
+
+  function destroyHls() {
+    if (hlsInstance) { try { hlsInstance.destroy(); } catch (e) {} hlsInstance = null; }
+  }
+
+  function setTab(which) {
+    var tabs = $('#playerTabs');
+    if (!tabs || tabs.hidden) return;
+    var live = which === 'live';
+    $('#tabLive').classList.toggle('on', live);
+    $('#tabClips').classList.toggle('on', !live);
+    $('#tabLive').setAttribute('aria-selected', String(live));
+    $('#tabClips').setAttribute('aria-selected', String(!live));
+  }
+
+  /* โหมด "ถ่ายทอดสด" — เล่นสัญญาณ HLS ของสถานี
+     ถ้าต่อไม่ติดภายใน 14 วินาที หรือเกิดข้อผิดพลาดที่กู้ไม่ได้ จะสลับไปคลิปล่าสุดเอง */
+  function showLive() {
+    var cfg = SITE.liveStream;
+    if (!cfg || !cfg.enabled || !cfg.hlsUrl) return showClips();
+
+    destroyHls();
+    setTab('live');
+    $('#featuredTitle').textContent = 'กำลังเชื่อมต่อสัญญาณถ่ายทอดสด…';
+
+    var frame = $('#featuredFrame');
+    frame.innerHTML = '<div class="video-skeleton"><span class="spinner"></span></div>' +
+      '<video id="livePlayer" playsinline controls muted preload="none"></video>';
+    var video = $('#livePlayer');
+
+    var settled = false;
+    function ok() {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      var sk = frame.querySelector('.video-skeleton');
+      if (sk) sk.parentNode.removeChild(sk);
+      frame.classList.add('is-live');
+      $('#featuredTitle').textContent = cfg.note || 'กำลังถ่ายทอดสด';
+      video.play().catch(function () { /* บางเบราว์เซอร์ต้องให้ผู้ใช้กดเล่นเอง */ });
+    }
+    function fail() {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      showClips();
+      $('#featuredTitle').textContent = 'ขณะนี้ไม่มีสัญญาณถ่ายทอดสด — แสดงคลิปล่าสุดจากช่องแทน';
+    }
+    var timer = setTimeout(fail, 14000);
+
+    video.addEventListener('loadeddata', ok);
+    video.addEventListener('playing', ok);
+    video.addEventListener('error', fail);
+
+    // Safari และ iOS เล่น HLS ได้เองโดยตรง
+    if (video.canPlayType('application/vnd.apple.mpegurl')) {
+      video.src = cfg.hlsUrl;
+      video.load();
+      return;
+    }
+
+    if (typeof Hls !== 'undefined' && Hls.isSupported()) {
+      hlsInstance = new Hls({ liveDurationInfinity: true, lowLatencyMode: false });
+      hlsInstance.on(Hls.Events.MANIFEST_PARSED, function () { video.play().catch(function () {}); });
+      hlsInstance.on(Hls.Events.ERROR, function (evt, data) {
+        if (!data || !data.fatal) return;
+        if (data.type === Hls.ErrorTypes.NETWORK_ERROR && !settled) { hlsInstance.startLoad(); return; }
+        if (data.type === Hls.ErrorTypes.MEDIA_ERROR && !settled) { hlsInstance.recoverMediaError(); return; }
+        fail();
+      });
+      hlsInstance.loadSource(cfg.hlsUrl);
+      hlsInstance.attachMedia(video);
+      return;
+    }
+
+    fail(); // เบราว์เซอร์เก่าที่เล่น HLS ไม่ได้
+  }
+
+  function buildFeatured() {
+    var cfg = SITE.liveStream;
+    var tabs = $('#playerTabs');
+
+    if (cfg && cfg.enabled && cfg.hlsUrl) {
+      tabs.hidden = false;
+      $('#tabLive').addEventListener('click', showLive);
+      $('#tabClips').addEventListener('click', showClips);
+      showLive();
+    } else {
+      tabs.hidden = true;
+      showClips();
+    }
   }
 
   /* ---------------- โซเชียล ---------------- */
