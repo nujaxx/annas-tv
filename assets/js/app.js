@@ -413,6 +413,7 @@
     $('#allVideosLink').href = ytVideos;
     $('#liveLink').href = ytLive;
     if (ch.facebookUrl) { $('#fbBtn').href = ch.facebookUrl; } else { $('#fbBtn').hidden = true; }
+    if (ch.tiktokUrl) { $('#ttBtn').href = ch.tiktokUrl; } else { $('#ttBtn').hidden = true; }
 
     buildSocial();
     buildFeatured();
