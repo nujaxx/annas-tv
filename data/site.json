@@ -1,0 +1,101 @@
+{
+  "channel": {
+    "name": "อันนาสทีวี",
+    "nameEn": "Annas TV",
+    "tagline": "สื่อสาระ เพื่อการเรียนรู้ สู่สัจธรรม",
+    "description": "ช่องเผยแผ่ความรู้อิสลาม รวมบทเรียนศาสนา คุตบะฮ์ บรรยายธรรม และรายการถ่ายทอดสด เพื่อสร้างสรรค์สังคมมุสลิม",
+    "youtubeChannelId": "UCnmmtEHt4vm0MNjUFtM6exA",
+    "youtubeHandle": "@annastvchannel",
+    "youtubeUrl": "https://www.youtube.com/channel/UCnmmtEHt4vm0MNjUFtM6exA",
+    "facebookUrl": https://www.facebook.com/profile.php?id=100070867295851",
+    "tiktokUrl": "https://www.tiktok.com/@annas_tv?is_from_webapp=1&sender_device=pc",
+    "instagramUrl": "",
+    "email": "",
+    "line": ""
+  },
+
+  "categories": [
+    {
+      "title": "อัลกุรอาน",
+      "desc": "อรรถาธิบายอายะฮ์ การอ่านที่ถูกต้อง และตัจญ์วีด",
+      "icon": "book",
+      "query": "อัลกุรอาน",
+      "playlistId": ""
+    },
+    {
+      "title": "หะดีษ",
+      "desc": "วจนะของท่านนบีมุฮัมมัด ﷺ พร้อมคำอธิบาย",
+      "icon": "quote",
+      "query": "หะดีษ",
+      "playlistId": ""
+    },
+    {
+      "title": "ฟิกฮ์ (ศาสนบัญญัติ)",
+      "desc": "การละหมาด ถือศีลอด ซะกาต ฮัจญ์ และเรื่องราวในชีวิตประจำวัน",
+      "icon": "scale",
+      "query": "ฟิกฮ์",
+      "playlistId": ""
+    },
+    {
+      "title": "อะกีดะฮ์ (หลักศรัทธา)",
+      "desc": "รากฐานความเชื่อ เตาฮีด และสิ่งที่ทำให้ศรัทธาบกพร่อง",
+      "icon": "heart",
+      "query": "อะกีดะฮ์",
+      "playlistId": ""
+    },
+    {
+      "title": "คุตบะฮ์วันศุกร์",
+      "desc": "บทธรรมเทศนาประจำสัปดาห์จากมัสยิด",
+      "icon": "mic",
+      "query": "คุตบะฮ์",
+      "playlistId": ""
+    },
+    {
+      "title": "ซีเราะฮ์ & ประวัติศาสตร์",
+      "desc": "ชีวประวัติท่านนบี ﷺ และบทเรียนจากอดีต",
+      "icon": "clock",
+      "query": "ซีเราะฮ์",
+      "playlistId": ""
+    },
+    {
+      "title": "ครอบครัวมุสลิม",
+      "desc": "การเลี้ยงดูบุตร คู่ครอง และมารยาทในบ้าน",
+      "icon": "users",
+      "query": "ครอบครัวมุสลิม",
+      "playlistId": ""
+    },
+    {
+      "title": "ดุอาอ์ & ซิกรุลลอฮ์",
+      "desc": "บทวิงวอนและการรำลึกถึงอัลลอฮ์ในแต่ละวัน",
+      "icon": "sparkle",
+      "query": "ดุอาอ์",
+      "playlistId": ""
+    }
+  ],
+
+  "schedule": [
+    { "day": "จันทร์",  "items": [ { "time": "20:00", "title": "บทเรียนอัลกุรอาน", "host": "" } ] },
+    { "day": "อังคาร",  "items": [ { "time": "20:00", "title": "หะดีษประจำวัน", "host": "" } ] },
+    { "day": "พุธ",     "items": [ { "time": "20:00", "title": "ฟิกฮ์ในชีวิตประจำวัน", "host": "" } ] },
+    { "day": "พฤหัสบดี","items": [ { "time": "20:00", "title": "อะกีดะฮ์เบื้องต้น", "host": "" } ] },
+    { "day": "ศุกร์",   "items": [ { "time": "12:30", "title": "ถ่ายทอดสดคุตบะฮ์วันศุกร์", "host": "" } ] },
+    { "day": "เสาร์",   "items": [ { "time": "10:00", "title": "รายการครอบครัวมุสลิม", "host": "" } ] },
+    { "day": "อาทิตย์", "items": [ { "time": "10:00", "title": "ซีเราะฮ์ท่านนบี ﷺ", "host": "" } ] }
+  ],
+
+  "prayer": {
+    "defaultCity": "Bangkok",
+    "country": "Thailand",
+    "method": 3,
+    "cities": [
+      { "label": "กรุงเทพมหานคร", "city": "Bangkok" },
+      { "label": "ปัตตานี", "city": "Pattani" },
+      { "label": "ยะลา", "city": "Yala" },
+      { "label": "นราธิวาส", "city": "Narathiwat" },
+      { "label": "สงขลา", "city": "Songkhla" },
+      { "label": "ภูเก็ต", "city": "Phuket" },
+      { "label": "เชียงใหม่", "city": "Chiang Mai" },
+      { "label": "ขอนแก่น", "city": "Khon Kaen" }
+    ]
+  }
+}
