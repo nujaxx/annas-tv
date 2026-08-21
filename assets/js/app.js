@@ -70,14 +70,87 @@
     instagram: '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>'
   };
 
-  /* ---------------- โหลด config ---------------- */
-  fetch('data/site.json')
-    .then(function (r) { return r.json(); })
-    .then(function (data) { SITE = data; render(); })
-    .catch(function () {
+  /* ---------------- ค่าสำรองในตัว ----------------
+     ถ้า data/site.json หายไปหรือพิมพ์ผิดจนอ่านไม่ได้ เว็บจะใช้ชุดนี้แทน
+     เพื่อไม่ให้ทั้งหน้าล่มเพราะเครื่องหมายตกหล่นเพียงจุดเดียว */
+  var DEFAULTS = {
+    channel: {
+      name: 'อันนาสทีวี',
+      nameEn: 'Annas TV',
+      tagline: 'สื่อสาระ เพื่อการเรียนรู้ สู่สัจธรรม',
+      description: 'ช่องเผยแผ่ความรู้อิสลาม รวมบทเรียนศาสนา คุตบะฮ์ บรรยายธรรม และรายการถ่ายทอดสด เพื่อสร้างสรรค์สังคมมุสลิม',
+      youtubeChannelId: 'UCnmmtEHt4vm0MNjUFtM6exA',
+      youtubeUrl: 'https://www.youtube.com/channel/UCnmmtEHt4vm0MNjUFtM6exA',
+      facebookUrl: 'https://www.facebook.com/profile.php?id=100070867295851',
+      tiktokUrl: 'https://www.tiktok.com/@annas_tv',
+      instagramUrl: ''
+    },
+    categories: [
+      { title: 'อัลกุรอาน', desc: 'อรรถาธิบายอายะฮ์ การอ่านที่ถูกต้อง และตัจญ์วีด', icon: 'book', query: 'อัลกุรอาน' },
+      { title: 'หะดีษ', desc: 'วจนะของท่านนบีมุฮัมมัด ﷺ พร้อมคำอธิบาย', icon: 'quote', query: 'หะดีษ' },
+      { title: 'ฟิกฮ์ (ศาสนบัญญัติ)', desc: 'การละหมาด ถือศีลอด ซะกาต ฮัจญ์ และเรื่องราวในชีวิตประจำวัน', icon: 'scale', query: 'ฟิกฮ์' },
+      { title: 'อะกีดะฮ์ (หลักศรัทธา)', desc: 'รากฐานความเชื่อ เตาฮีด และสิ่งที่ทำให้ศรัทธาบกพร่อง', icon: 'heart', query: 'อะกีดะฮ์' },
+      { title: 'คุตบะฮ์วันศุกร์', desc: 'บทธรรมเทศนาประจำสัปดาห์จากมัสยิด', icon: 'mic', query: 'คุตบะฮ์' },
+      { title: 'ซีเราะฮ์ & ประวัติศาสตร์', desc: 'ชีวประวัติท่านนบี ﷺ และบทเรียนจากอดีต', icon: 'clock', query: 'ซีเราะฮ์' },
+      { title: 'ครอบครัวมุสลิม', desc: 'การเลี้ยงดูบุตร คู่ครอง และมารยาทในบ้าน', icon: 'users', query: 'ครอบครัวมุสลิม' },
+      { title: 'ดุอาอ์ & ซิกรุลลอฮ์', desc: 'บทวิงวอนและการรำลึกถึงอัลลอฮ์ในแต่ละวัน', icon: 'sparkle', query: 'ดุอาอ์' }
+    ],
+    schedule: [
+      { day: 'จันทร์', items: [{ time: '20:00', title: 'บทเรียนอัลกุรอาน', host: '' }] },
+      { day: 'อังคาร', items: [{ time: '20:00', title: 'หะดีษประจำวัน', host: '' }] },
+      { day: 'พุธ', items: [{ time: '20:00', title: 'ฟิกฮ์ในชีวิตประจำวัน', host: '' }] },
+      { day: 'พฤหัสบดี', items: [{ time: '20:00', title: 'อะกีดะฮ์เบื้องต้น', host: '' }] },
+      { day: 'ศุกร์', items: [{ time: '12:30', title: 'ถ่ายทอดสดคุตบะฮ์วันศุกร์', host: '' }] },
+      { day: 'เสาร์', items: [{ time: '10:00', title: 'รายการครอบครัวมุสลิม', host: '' }] },
+      { day: 'อาทิตย์', items: [{ time: '10:00', title: 'ซีเราะฮ์ท่านนบี ﷺ', host: '' }] }
+    ],
+    prayer: {
+      defaultCity: 'Bangkok', country: 'Thailand', method: 3,
+      cities: [
+        { label: 'กรุงเทพมหานคร', city: 'Bangkok' },
+        { label: 'ปัตตานี', city: 'Pattani' },
+        { label: 'ยะลา', city: 'Yala' },
+        { label: 'นราธิวาส', city: 'Narathiwat' },
+        { label: 'สงขลา', city: 'Songkhla' },
+        { label: 'ภูเก็ต', city: 'Phuket' },
+        { label: 'เชียงใหม่', city: 'Chiang Mai' },
+        { label: 'ขอนแก่น', city: 'Khon Kaen' }
+      ]
+    }
+  };
+
+  function assign(base, extra) {
+    var out = {}, k;
+    for (k in base) { if (Object.prototype.hasOwnProperty.call(base, k)) out[k] = base[k]; }
+    for (k in extra) { if (Object.prototype.hasOwnProperty.call(extra, k)) out[k] = extra[k]; }
+    return out;
+  }
+
+  /* รับค่าจากไฟล์เท่าที่ใช้ได้ ส่วนที่ขาดหรือเสียให้ใช้ค่าสำรองแทน */
+  function useConfig(data, failed) {
+    data = data || {};
+    SITE = {
+      channel: assign(DEFAULTS.channel, data.channel || {}),
+      categories: (data.categories && data.categories.length) ? data.categories : DEFAULTS.categories,
+      schedule: (data.schedule && data.schedule.length) ? data.schedule : DEFAULTS.schedule,
+      prayer: assign(DEFAULTS.prayer, data.prayer || {})
+    };
+    render();
+    if (failed) {
       var note = $('#videoNote');
-      if (note) { note.hidden = false; note.textContent = 'ไม่สามารถโหลดไฟล์ตั้งค่า data/site.json ได้'; }
-    });
+      if (note) {
+        note.hidden = false;
+        note.textContent = 'หมายเหตุสำหรับผู้ดูแล: อ่านไฟล์ data/site.json ไม่สำเร็จ (อาจมีเครื่องหมายตกหล่น) ' +
+          'ขณะนี้เว็บกำลังใช้ค่าสำรองในตัวแทน — ตรวจไฟล์ได้ที่ jsonlint.com';
+      }
+    }
+  }
+
+  /* ---------------- โหลด config ---------------- */
+  fetchTimeout('data/site.json?t=' + Date.now(), 8000)
+    .then(function (r) { return r.json(); })
+    .then(function (data) { useConfig(data, false); })
+    .catch(function () { useConfig(null, true); });
 
   function render() {
     var ch = SITE.channel;
