@@ -279,14 +279,15 @@ button,select{font-family:inherit;font-size:inherit}
   font-size:11.5px;font-weight:700;letter-spacing:.03em;padding:2px 9px;border-radius:999px;
   background:var(--green);color:#fff;
 }
-.slot{display:flex;gap:12px;padding:9px 0;border-top:1px dashed var(--line)}
+.slot{display:flex;gap:11px;padding:10px 0;border-top:1px dashed var(--line)}
 .slot:first-of-type{border-top:0;padding-top:0}
 .slot time{
   font-variant-numeric:tabular-nums;font-weight:700;color:var(--green);
-  font-size:14.5px;flex-shrink:0;min-width:48px;
+  font-size:14.5px;flex-shrink:0;min-width:52px;max-width:58px;line-height:1.45;
 }
-.slot .slot-title{font-size:14.8px;line-height:1.55}
-.slot .slot-host{display:block;color:var(--muted);font-size:13px}
+.slot .slot-title{font-size:14.8px;line-height:1.5;font-weight:500}
+.slot .slot-host{display:block;color:var(--muted);font-size:12.5px;line-height:1.5;margin-top:1px}
+.schedule-grid{align-items:start}
 
 /* ---------- prayer ---------- */
 .select-wrap select{
