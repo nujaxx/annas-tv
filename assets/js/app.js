@@ -44,7 +44,7 @@
         links.forEach(function (l) { l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id); });
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    ['latest', 'categories', 'schedule', 'prayer', 'about'].forEach(function (id) {
+    ['latest', 'categories', 'schedule', 'prayer', 'about', 'support'].forEach(function (id) {
       var s = document.getElementById(id); if (s) obs.observe(s);
     });
   })();
@@ -95,6 +95,16 @@
       { title: 'ครอบครัวมุสลิม', desc: 'การเลี้ยงดูบุตร คู่ครอง และมารยาทในบ้าน', icon: 'users', query: 'ครอบครัวมุสลิม' },
       { title: 'ดุอาอ์ & ซิกรุลลอฮ์', desc: 'บทวิงวอนและการรำลึกถึงอัลลอฮ์ในแต่ละวัน', icon: 'sparkle', query: 'ดุอาอ์' }
     ],
+    support: {
+      enabled: true,
+      title: 'ร่วมสนับสนุนงานเผยแผ่',
+      description: 'ทุกการบริจาคของท่านช่วยให้อันนาสทีวีผลิตรายการและเผยแผ่ความรู้อิสลามต่อไปได้',
+      note: 'โปรดตรวจสอบชื่อบัญชีให้ตรงก่อนโอนทุกครั้ง',
+      accounts: [
+        { bankCode: 'scb', bankName: 'ธนาคารไทยพาณิชย์', bankNameEn: 'SCB',
+          accountName: 'มูลนิธิอันนาส', accountNumber: '468 109 4816' }
+      ]
+    },
     liveStream: {
       enabled: true,
       hlsUrl: 'https://vdo.plathong.net/Annastv/live/playlist.m3u8',
@@ -385,6 +395,7 @@
       schedule: (data.schedule && data.schedule.length) ? data.schedule : DEFAULTS.schedule,
       scheduleNote: data.scheduleNote || DEFAULTS.scheduleNote,
       liveStream: assign(DEFAULTS.liveStream, data.liveStream || {}),
+      support: data.support || DEFAULTS.support,
       prayer: assign(DEFAULTS.prayer, data.prayer || {})
     };
     render();
@@ -423,6 +434,7 @@
     if (ch.tiktokUrl) { $('#ttBtn').href = ch.tiktokUrl; } else { $('#ttBtn').hidden = true; }
 
     buildSocial();
+    buildSupport();
     buildFeatured();
     buildCategories();
     buildSchedule();
@@ -548,6 +560,106 @@
       tabs.hidden = true;
       showClips();
     }
+  }
+
+  /* ---------------- ช่องทางสนับสนุน ----------------
+     ตราสัญลักษณ์ธนาคารเป็นตราสีประจำธนาคารพร้อมอักษรย่อ ไม่ใช่โลโก้ทางการ
+     หากมีไฟล์โลโก้จริง ให้ใส่ "logo": "assets/img/ชื่อไฟล์.svg" ในบัญชีนั้นใน site.json */
+  var BANK_BRAND = {
+    scb:      { bg: '#4E2E7F', fg: '#ffffff', short: 'SCB' },
+    kbank:    { bg: '#00A94F', fg: '#ffffff', short: 'KBANK' },
+    ktb:      { bg: '#00A4E4', fg: '#ffffff', short: 'KTB' },
+    bbl:      { bg: '#1E4598', fg: '#ffffff', short: 'BBL' },
+    bay:      { bg: '#FEC43B', fg: '#3b2c00', short: 'BAY' },
+    ttb:      { bg: '#1279BE', fg: '#ffffff', short: 'ttb' },
+    gsb:      { bg: '#EB198D', fg: '#ffffff', short: 'GSB' },
+    baac:     { bg: '#4B9B1D', fg: '#ffffff', short: 'BAAC' },
+    ibank:    { bg: '#184615', fg: '#ffffff', short: 'ibank' }
+  };
+
+  function bankMark(acc) {
+    if (acc.logo) {
+      return '<span class="bank-mark bank-mark-img"><img src="' + esc(acc.logo) +
+        '" alt="' + esc(acc.bankName) + '" width="56" height="56"></span>';
+    }
+    var b = BANK_BRAND[acc.bankCode] || { bg: '#0d7a5f', fg: '#ffffff', short: (acc.bankNameEn || '฿') };
+    return '<span class="bank-mark" style="background:' + b.bg + ';color:' + b.fg + '">' +
+      esc(b.short) + '</span>';
+  }
+
+  function buildSupport() {
+    var cfg = SITE.support;
+    var sec = document.getElementById('support');
+    if (!sec) return;
+    if (!cfg || cfg.enabled === false || !cfg.accounts || !cfg.accounts.length) {
+      sec.hidden = true;
+      $$('a[href="#support"]').forEach(function (a) { a.hidden = true; });
+      return;
+    }
+    sec.hidden = false;
+
+    if (cfg.title) $('#supportTitle').textContent = cfg.title;
+    $('#supportDesc').textContent = cfg.description || '';
+    $('#supportNote').textContent = cfg.note || '';
+
+    var grid = $('#bankGrid');
+    grid.innerHTML = '';
+    cfg.accounts.forEach(function (acc) {
+      var digits = String(acc.accountNumber || '').replace(/\D/g, '');
+      var box = el('div', 'bank');
+      box.innerHTML =
+        '<div class="bank-head">' + bankMark(acc) +
+          '<div><strong>' + esc(acc.bankName) + '</strong>' +
+          (acc.branch ? '<span class="bank-branch">' + esc(acc.branch) + '</span>' : '') + '</div>' +
+        '</div>' +
+        '<dl class="bank-rows">' +
+          '<dt>ชื่อบัญชี</dt><dd>' + esc(acc.accountName) + '</dd>' +
+          '<dt>เลขที่บัญชี</dt><dd class="acct">' + esc(acc.accountNumber) + '</dd>' +
+        '</dl>' +
+        '<button class="btn btn-primary copy-btn" type="button">' +
+          '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">' +
+          '<rect x="9" y="9" width="12" height="12" rx="2.4"/><path d="M6.5 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1.5"/></svg>' +
+          '<span>คัดลอกเลขบัญชี</span>' +
+        '</button>';
+
+      var btn = box.querySelector('.copy-btn');
+      var label = btn.querySelector('span');
+      btn.addEventListener('click', function () {
+        copyText(digits, function (done) {
+          label.textContent = done ? 'คัดลอกแล้ว ✓' : 'คัดลอกไม่สำเร็จ';
+          btn.classList.toggle('copied', done);
+          setTimeout(function () {
+            label.textContent = 'คัดลอกเลขบัญชี';
+            btn.classList.remove('copied');
+          }, 2200);
+        });
+      });
+      grid.appendChild(box);
+    });
+  }
+
+  function copyText(text, cb) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text)
+        .then(function () { cb(true); })
+        .catch(function () { cb(legacyCopy(text)); });
+      return;
+    }
+    cb(legacyCopy(text));
+  }
+
+  function legacyCopy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:-1000px;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
   }
 
   /* ---------------- โซเชียล ---------------- */

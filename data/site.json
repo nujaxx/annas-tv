@@ -73,6 +73,22 @@
     }
   ],
 
+  "support": {
+    "enabled": true,
+    "title": "ร่วมสนับสนุนงานเผยแผ่",
+    "description": "ทุกการบริจาคของท่านช่วยให้อันนาสทีวีผลิตรายการและเผยแผ่ความรู้อิสลามต่อไปได้ ขออัลลอฮ์ทรงตอบแทนความดีงามแก่ท่าน",
+    "note": "โปรดตรวจสอบชื่อบัญชีให้ตรงก่อนโอนทุกครั้ง หากต้องการใบเสร็จหรือมีข้อสงสัย ติดต่อได้ทางเพจ Facebook ของช่อง",
+    "accounts": [
+      {
+        "bankCode": "scb",
+        "bankName": "ธนาคารไทยพาณิชย์",
+        "bankNameEn": "SCB",
+        "accountName": "มูลนิธิอันนาส",
+        "accountNumber": "468 109 4816"
+      }
+    ]
+  },
+
   "liveStream": {
     "enabled": true,
     "hlsUrl": "https://vdo.plathong.net/Annastv/live/playlist.m3u8",
