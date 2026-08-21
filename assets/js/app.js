@@ -97,6 +97,7 @@
     if (ch.facebookUrl) { $('#fbBtn').href = ch.facebookUrl; } else { $('#fbBtn').hidden = true; }
 
     buildSocial();
+    buildFeatured();
     buildCategories();
     buildSchedule();
     buildPrayerCities();
@@ -104,6 +105,26 @@
     loadVideos();
 
     $('#year').textContent = new Date().getFullYear() + 543 + ' / ' + new Date().getFullYear();
+  }
+
+  /* ---------------- เครื่องเล่นหลัก ----------------
+     ใช้ "เพลย์ลิสต์คลิปที่อัปโหลด" ของช่อง ซึ่ง YouTube สร้างให้ทุกช่องอัตโนมัติ
+     รหัสของมันคือรหัสช่องที่เปลี่ยน UC ขึ้นต้นเป็น UU
+     วิธีนี้ฝังได้ตรงๆ ไม่ต้องเรียก API ไม่ต้องผ่านตัวกลาง จึงไม่มีทางโหลดไม่ขึ้น */
+  function uploadsPlaylistId() {
+    var cid = SITE.channel.youtubeChannelId || '';
+    return cid.indexOf('UC') === 0 ? 'UU' + cid.slice(2) : '';
+  }
+
+  function buildFeatured() {
+    var list = uploadsPlaylistId();
+    if (!list) return;
+    $('#featuredFrame').innerHTML =
+      '<iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=' + list +
+      '&rel=0" title="วิดีโอล่าสุดจากช่องอันนาสทีวี" loading="lazy" ' +
+      'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" ' +
+      'allowfullscreen></iframe>';
+    $('#featuredTitle').textContent = 'คลิปล่าสุดจากช่อง — กดเล่นได้เลย หรือเลื่อนดูคลิปอื่นในเครื่องเล่น';
   }
 
   /* ---------------- โซเชียล ---------------- */
@@ -357,15 +378,12 @@
     videos = videos.slice(0, 9);
     if (!videos.length) return showVideoError();
 
-    // วิดีโอเด่น
-    var top = videos[0];
-    var frame = $('#featuredFrame');
-    frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + top.id +
-      '?rel=0" title="' + esc(top.title) + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
-    $('#featuredTitle').textContent = top.title;
+    // เครื่องเล่นหลักใช้เพลย์ลิสต์คลิปที่อัปโหลดอยู่แล้ว จึงไม่ต้องเปลี่ยน
 
     // การ์ดวิดีโอ
     var grid = $('#videoGrid');
+    grid.className = 'video-grid';
+    $('#videoNote').hidden = true;
     grid.innerHTML = '';
     videos.forEach(function (v) {
       var a = el('a', 'card');
@@ -384,14 +402,39 @@
     });
   }
 
+  /* ถ้าดึงรายชื่อคลิปไม่ได้ ให้แสดงทางลัดที่ใช้งานได้จริงแทนข้อความ error
+     เครื่องเล่นหลักด้านบนยังเล่นคลิปล่าสุดได้ตามปกติ */
   function showVideoError() {
-    $('#featuredSkeleton') && ($('#featuredFrame').innerHTML =
-      '<div class="video-skeleton"><p style="color:#a9c4b9;font-size:14px;text-align:center;padding:0 20px">ไม่สามารถโหลดวิดีโออัตโนมัติได้<br>กดปุ่ม “ดูช่อง YouTube” ด้านซ้ายเพื่อรับชม</p></div>');
-    $('#featuredTitle').textContent = '';
-    $('#videoGrid').innerHTML = '';
+    var base = SITE.channel.youtubeUrl.replace(/\/$/, '');
+    var list = uploadsPlaylistId();
+    var shortcuts = [
+      { t: 'คลิปทั้งหมด', d: 'ดูวิดีโอทุกตอนเรียงตามวันที่', u: base + '/videos', i: 'book' },
+      { t: 'ถ่ายทอดสด', d: 'รายการสดและคลิปย้อนหลังของไลฟ์', u: base + '/streams', i: 'mic' },
+      { t: 'เพลย์ลิสต์', d: 'บทเรียนที่จัดชุดไว้เป็นซีรีส์', u: base + '/playlists', i: 'clock' }
+    ];
+    if (list) {
+      shortcuts.unshift({
+        t: 'คลิปล่าสุดทั้งชุด', d: 'เปิดเพลย์ลิสต์คลิปที่อัปโหลดล่าสุด',
+        u: 'https://www.youtube.com/playlist?list=' + list, i: 'sparkle'
+      });
+    }
+
+    var grid = $('#videoGrid');
+    grid.className = 'cat-grid';
+    grid.innerHTML = '';
+    shortcuts.forEach(function (s) {
+      var a = el('a', 'cat');
+      a.href = s.u; a.target = '_blank'; a.rel = 'noopener';
+      a.innerHTML =
+        '<span class="cat-icon">' + icon(s.i) + '</span>' +
+        '<h3>' + esc(s.t) + '</h3><p>' + esc(s.d) + '</p>' +
+        '<span class="cat-more">เปิดบน YouTube →</span>';
+      grid.appendChild(a);
+    });
+
     var n = $('#videoNote');
     n.hidden = false;
-    n.textContent = 'ยังไม่สามารถดึงรายการวิดีโอได้ในขณะนี้ — ระบบจะดึงใหม่อัตโนมัติเมื่อรีเฟรชหน้า หรือดูรายการทั้งหมดได้บนช่อง YouTube';
+    n.textContent = 'ขณะนี้ยังดึงรายชื่อคลิปมาแสดงเป็นการ์ดไม่ได้ จึงแสดงเป็นทางลัดไปยังช่องแทน — เครื่องเล่นด้านบนยังเล่นคลิปล่าสุดได้ตามปกติ';
   }
 
   function relDate(s) {
