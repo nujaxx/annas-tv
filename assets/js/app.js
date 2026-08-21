@@ -208,7 +208,7 @@
 
     $('#prayerDate').textContent = 'กำลังโหลดเวลาละหมาด…';
 
-    fetch(url)
+    fetchTimeout(url, 9000)
       .then(function (r) { return r.json(); })
       .then(function (res) {
         if (!res || !res.data || !res.data.timings) throw new Error('bad');
@@ -270,14 +270,37 @@
   }
 
   /* ---------------- วิดีโอจาก YouTube ---------------- */
+
+  // fetch ที่มีเวลาหมดอายุ ป้องกันหน้าเว็บค้างรอไม่รู้จบ
+  function fetchTimeout(url, ms) {
+    if (typeof AbortController === 'undefined') return fetch(url);
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, ms || 8000);
+    return fetch(url, { signal: ctrl.signal }).then(
+      function (r) { clearTimeout(timer); return r; },
+      function (e) { clearTimeout(timer); throw e; }
+    );
+  }
+
   function loadVideos() {
     var cid = SITE.channel.youtubeChannelId;
     var feed = 'https://www.youtube.com/feeds/videos.xml?channel_id=' + cid;
+    var painted = false;
 
-    // ลองหลายช่องทาง แล้วค่อยตกมาที่ไฟล์สำรอง data/videos.json
-    var sources = [
+    // 1) อ่านไฟล์ในเว็บตัวเองก่อน — เร็วที่สุดและไม่มีทางล่ม
+    fetchTimeout('data/videos.json?t=' + Date.now(), 6000)
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        if (!j.videos || !j.videos.length) throw new Error('empty');
+        painted = true;
+        paintVideos(j.videos);
+      })
+      .catch(function () { /* ไม่มีไฟล์สำรอง รอผลจากภายนอกแทน */ });
+
+    // 2) ดึงของใหม่จากภายนอกเป็นเบื้องหลัง ได้เมื่อไหร่ค่อยทับของเดิม
+    var remote = [
       function () {
-        return fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed))
+        return fetchTimeout('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feed), 8000)
           .then(function (r) { return r.json(); })
           .then(function (j) {
             if (!j.items || !j.items.length) throw new Error('empty');
@@ -287,24 +310,26 @@
           });
       },
       function () {
-        return fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(feed))
+        return fetchTimeout('https://api.allorigins.win/raw?url=' + encodeURIComponent(feed), 8000)
           .then(function (r) { return r.text(); })
           .then(parseFeed);
       },
       function () {
-        return fetch('data/videos.json')
-          .then(function (r) { return r.json(); })
-          .then(function (j) {
-            if (!j.videos || !j.videos.length) throw new Error('empty');
-            return j.videos;
-          });
+        return fetchTimeout('https://corsproxy.io/?' + encodeURIComponent(feed), 8000)
+          .then(function (r) { return r.text(); })
+          .then(parseFeed);
       }
     ];
 
     (function attempt(i) {
-      if (i >= sources.length) return showVideoError();
-      sources[i]().then(paintVideos).catch(function () { attempt(i + 1); });
+      if (i >= remote.length) { if (!painted) showVideoError(); return; }
+      remote[i]()
+        .then(function (list) { painted = true; paintVideos(list); })
+        .catch(function () { attempt(i + 1); });
     })(0);
+
+    // กันเหนียว: ถ้าผ่านไป 26 วินาทีแล้วยังไม่มีอะไรขึ้น ให้แสดงข้อความแทนวงกลมหมุน
+    setTimeout(function () { if (!painted) showVideoError(); }, 26000);
   }
 
   function idFrom(url) {
