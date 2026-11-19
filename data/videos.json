@@ -1,16 +1,51 @@
 {
-  "updatedAt": "2026-11-18T08:10:11.804719+00:00",
+  "updatedAt": "2026-11-19T08:20:42.926690+00:00",
   "note": "อัปเดตอัตโนมัติโดย GitHub Actions",
   "videos": [
     {
+      "id": "PgniI0-H0Xs",
+      "title": "🔴 Live ซุนนะห์น่ารู้  19.11.69 อ.หะดีส บุญมาเลิศ",
+      "date": "2026-11-19T07:28:24+00:00"
+    },
+    {
+      "id": "NKtJT8t0WGY",
+      "title": "🔴 Live โลกชรา 19.11.69  อ.บุคอรี  เหมฮีม",
+      "date": "2026-11-19T01:02:01+00:00"
+    },
+    {
+      "id": "UWIZIOP9KQo",
+      "title": "🔴 Live Al-Manhaj 10/18/2026 Ustadz Ya'far Ruenphithak, Teacher Hasman Amini",
+      "date": "2026-11-19T03:26:23+00:00"
+    },
+    {
+      "id": "jsLtbCT2EM0",
+      "title": "🔴 Live สัจธรรม 19.11.69 อ.อาบีดีน ฮัดซัน ครูฟิรดาวซฺ กาเซ็ม",
+      "date": "2026-11-19T00:06:04+00:00"
+    },
+    {
+      "id": "71AIEc13v4E",
+      "title": "🔴Live หนึ่งอักษรสิบความดี 19.11.69 อ.ฮาริษ  มังเดชะ",
+      "date": "2026-11-18T14:58:38+00:00"
+    },
+    {
+      "id": "XqHRWxATNlA",
+      "title": "🔴 Live Library 11/18/1983 Ajarn Hadees Boonmalert",
+      "date": "2026-11-18T22:53:15+00:00"
+    },
+    {
       "id": "xcJNbrof7SU",
-      "title": "🔴 Live หลักศรัทธา 18.11.69 อ.หะดีส บุญมาเลิศ",
-      "date": "2026-11-18T05:18:32+00:00"
+      "title": "🔴 LIVE: Principles of Faith 11/18/2026, Ustadz Hadees Boonmalert",
+      "date": "2026-11-18T20:27:38+00:00"
     },
     {
       "id": "VCtukhdMiTs",
-      "title": "🔴 Live วันละหะดีษ  18.11.69 อ.บุคอรี  เหมฮีม",
-      "date": "2026-11-18T01:06:52+00:00"
+      "title": "🔴 Live: One Hadith a Day 11/18/26 - Ustadh Bukhari Meheng",
+      "date": "2026-11-18T19:00:07+00:00"
+    },
+    {
+      "id": "LKbis6msOus",
+      "title": "🔴 Live: The Reasons for the Revelation of the Quran 18.1.69 Lecturers: Ustadh Mubarak Mahammad Sa...",
+      "date": "2026-11-18T13:50:59+00:00"
     },
     {
       "id": "Y38fX1H4La4",
@@ -18,19 +53,9 @@
       "date": "2026-11-18T02:20:51+00:00"
     },
     {
-      "id": "LKbis6msOus",
-      "title": "🔴 Live มูลเหตุแห่งการประทานอัลกุรอาน 18.1.69 อ.มุบาร็อก  มะหะหมัดซอเเละ ครูฟิรดาวซฺ กาเซ็ม",
-      "date": "2026-11-17T23:24:45+00:00"
-    },
-    {
       "id": "EIK-RY62axU",
       "title": "🔴 Live fisara 10/17/26",
       "date": "2026-11-18T00:09:32+00:00"
-    },
-    {
-      "id": "UBZjww-Hzq8",
-      "title": "🔴 Live มูลเหตุแห่งการประทานอัลกุรอาน 18.1.69  อ.มุบาร็อก  มะหะหมัดซอเเละ ครูฟิรดาวซฺ กาเซ็ม",
-      "date": "2026-11-17T14:06:22+00:00"
     },
     {
       "id": "Gxa3wpcR4vs",
@@ -51,31 +76,6 @@
       "id": "gmG1uvBuUcc",
       "title": "🔴 Live: The Truth 11/17/26 Abideen Hassan & Firdaus Kasem",
       "date": "2026-11-17T13:25:34+00:00"
-    },
-    {
-      "id": "_rCeUan7G70",
-      "title": "🔴 Live My Way, The Islamic Way 11/16/26 Ustadz Yafara Ruenpitak",
-      "date": "2026-11-17T03:15:10+00:00"
-    },
-    {
-      "id": "j3iqemgNC90",
-      "title": "🔴 Live Hadith Bulugh al-Maram 11/16/26 Achan Yafar Ruenpitak",
-      "date": "2026-11-16T23:17:02+00:00"
-    },
-    {
-      "id": "k1AocqcqhTE",
-      "title": "🔴 Live Daily Hadith 11/16/26 [2026] Ustadh Bukhari Hemheem",
-      "date": "2026-11-16T18:52:10+00:00"
-    },
-    {
-      "id": "89bgk4dND9E",
-      "title": "🔴 Live: The Truth 12/25/26 - Ustadh Abideen Hadson & Teacher Firdaus Kasem",
-      "date": "2026-11-16T13:48:30+00:00"
-    },
-    {
-      "id": "6LLSzbBtU1U",
-      "title": "🔴 Live: Here at Unnas, for Unnas 11/15/26",
-      "date": "2026-11-16T02:54:56+00:00"
     }
   ]
 }
