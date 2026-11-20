@@ -1,31 +1,51 @@
 {
-  "updatedAt": "2026-11-19T08:20:42.926690+00:00",
+  "updatedAt": "2026-11-20T08:00:24.925799+00:00",
   "note": "อัปเดตอัตโนมัติโดย GitHub Actions",
   "videos": [
     {
+      "id": "qkInEi2qZpE",
+      "title": "🔴 Live รัศมีเเห่งความรู้ 20.11.69  อ.บุคอรี  เหมฮีม  อ.หะดีส บุญมาเลิศ",
+      "date": "2026-11-20T01:04:04+00:00"
+    },
+    {
+      "id": "sixLmHC8Xl4",
+      "title": "🔴 Live ที่นี่อันนาสเพื่ออันนาส  20.11.69",
+      "date": "2026-11-20T02:31:13+00:00"
+    },
+    {
+      "id": "s9j-KCOpJWA",
+      "title": "🔴 Live ปฏิบัติแบบท่านนบี 20.11.69 อ.อับดุลค่อบีร สนนุกิจ",
+      "date": "2026-11-19T23:51:54+00:00"
+    },
+    {
+      "id": "TlC97F8Ct5w",
+      "title": "🔴 Live Here at Annas, For Annas 11/19/26",
+      "date": "2026-11-20T00:27:54+00:00"
+    },
+    {
+      "id": "eCHoLHefSuA",
+      "title": "🔴 Live ที่นี่อันนาสเพื่ออันนาส  20.11.69",
+      "date": "2026-11-19T14:05:34+00:00"
+    },
+    {
       "id": "PgniI0-H0Xs",
-      "title": "🔴 Live ซุนนะห์น่ารู้  19.11.69 อ.หะดีส บุญมาเลิศ",
-      "date": "2026-11-19T07:28:24+00:00"
+      "title": "🔴 Live: Essential Sunnah Knowledge 11/19/24 Ustadz Hadis Bunmalert",
+      "date": "2026-11-19T20:56:29+00:00"
     },
     {
       "id": "NKtJT8t0WGY",
-      "title": "🔴 Live โลกชรา 19.11.69  อ.บุคอรี  เหมฮีม",
-      "date": "2026-11-19T01:02:01+00:00"
+      "title": "🔴 Live: The Aging World, 11/19/2026, Ustaz Bukhari Hemheem",
+      "date": "2026-11-19T19:37:27+00:00"
+    },
+    {
+      "id": "jsLtbCT2EM0",
+      "title": "🔴 Live: Learning Toward the Truth 11/19/2026 Ustaz Abdeen Hadson, Kru Firdaus Kasem",
+      "date": "2026-11-19T13:43:39+00:00"
     },
     {
       "id": "UWIZIOP9KQo",
       "title": "🔴 Live Al-Manhaj 10/18/2026 Ustadz Ya'far Ruenphithak, Teacher Hasman Amini",
       "date": "2026-11-19T03:26:23+00:00"
-    },
-    {
-      "id": "jsLtbCT2EM0",
-      "title": "🔴 Live สัจธรรม 19.11.69 อ.อาบีดีน ฮัดซัน ครูฟิรดาวซฺ กาเซ็ม",
-      "date": "2026-11-19T00:06:04+00:00"
-    },
-    {
-      "id": "71AIEc13v4E",
-      "title": "🔴Live หนึ่งอักษรสิบความดี 19.11.69 อ.ฮาริษ  มังเดชะ",
-      "date": "2026-11-18T14:58:38+00:00"
     },
     {
       "id": "XqHRWxATNlA",
@@ -56,26 +76,6 @@
       "id": "EIK-RY62axU",
       "title": "🔴 Live fisara 10/17/26",
       "date": "2026-11-18T00:09:32+00:00"
-    },
-    {
-      "id": "Gxa3wpcR4vs",
-      "title": "🔴 Live: A Peaceful Heart 11/17/26 Yaseen Salakphet",
-      "date": "2026-11-17T22:57:47+00:00"
-    },
-    {
-      "id": "Trg2VmgR7gc",
-      "title": "🔴 Live: The Science of the Prophet's Sayings 10/17/2026 Ustadz Ya'far Ruenphitak",
-      "date": "2026-11-17T22:24:50+00:00"
-    },
-    {
-      "id": "hIx-VDGCbkQ",
-      "title": "🔴 Live: One Hadith a Day 11/17/26 Ustadz Roqib Pradubyat",
-      "date": "2026-11-17T18:22:51+00:00"
-    },
-    {
-      "id": "gmG1uvBuUcc",
-      "title": "🔴 Live: The Truth 11/17/26 Abideen Hassan & Firdaus Kasem",
-      "date": "2026-11-17T13:25:34+00:00"
     }
   ]
 }
