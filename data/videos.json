@@ -1,11 +1,41 @@
 {
-  "updatedAt": "2026-11-20T08:00:24.925799+00:00",
+  "updatedAt": "2026-11-21T07:56:21.793916+00:00",
   "note": "อัปเดตอัตโนมัติโดย GitHub Actions",
   "videos": [
     {
+      "id": "id83swRUH1c",
+      "title": "🔴 Live ศาสนบัญญัติ 21.11.69  อ.อับดุลลาตีฟ ตำราเรียง  ครู อิมรอน มูฮำหมัด",
+      "date": "2026-11-21T01:05:57+00:00"
+    },
+    {
+      "id": "67JuWWv2RG0",
+      "title": "🔴 LIVE: Etiquette from the Heavens 11/20/26 Ustadz Ya'far Ruenpitak, Kru Hasman Amini",
+      "date": "2026-11-21T03:26:26+00:00"
+    },
+    {
+      "id": "TwQpQCBIsUs",
+      "title": "🔴 Live มูลเหตุแห่งการประทานอัลกุรอาน 21.11.69 อ.มุบาร็อก  มะหะหมัดซอเเละ  ครู อิมรอน มูฮำหมัด",
+      "date": "2026-11-20T23:25:50+00:00"
+    },
+    {
+      "id": "CGXmIb3aQh0",
+      "title": "🔴Live หนึ่งอักษรสิบความดี 21.11.69 อ.ฮาริษ  มังเดชะ",
+      "date": "2026-11-20T14:49:54+00:00"
+    },
+    {
+      "id": "ZG9C5I6X3OA",
+      "title": "🔴 Live: Here at Annas, for Annas 11/20/26",
+      "date": "2026-11-20T23:20:47+00:00"
+    },
+    {
       "id": "qkInEi2qZpE",
-      "title": "🔴 Live รัศมีเเห่งความรู้ 20.11.69  อ.บุคอรี  เหมฮีม  อ.หะดีส บุญมาเลิศ",
-      "date": "2026-11-20T01:04:04+00:00"
+      "title": "🔴 Live: Rays of Knowledge, 11/20/2026 – Ustadz Bukhari Hemhim & Ustadz Hadis Bunmalert",
+      "date": "2026-11-20T20:27:09+00:00"
+    },
+    {
+      "id": "eCHoLHefSuA",
+      "title": "🔴 Live: Here at Annas, for Annas 11/20/26",
+      "date": "2026-11-20T12:18:32+00:00"
     },
     {
       "id": "sixLmHC8Xl4",
@@ -13,19 +43,9 @@
       "date": "2026-11-20T02:31:13+00:00"
     },
     {
-      "id": "s9j-KCOpJWA",
-      "title": "🔴 Live ปฏิบัติแบบท่านนบี 20.11.69 อ.อับดุลค่อบีร สนนุกิจ",
-      "date": "2026-11-19T23:51:54+00:00"
-    },
-    {
       "id": "TlC97F8Ct5w",
       "title": "🔴 Live Here at Annas, For Annas 11/19/26",
       "date": "2026-11-20T00:27:54+00:00"
-    },
-    {
-      "id": "eCHoLHefSuA",
-      "title": "🔴 Live ที่นี่อันนาสเพื่ออันนาส  20.11.69",
-      "date": "2026-11-19T14:05:34+00:00"
     },
     {
       "id": "PgniI0-H0Xs",
@@ -56,26 +76,6 @@
       "id": "xcJNbrof7SU",
       "title": "🔴 LIVE: Principles of Faith 11/18/2026, Ustadz Hadees Boonmalert",
       "date": "2026-11-18T20:27:38+00:00"
-    },
-    {
-      "id": "VCtukhdMiTs",
-      "title": "🔴 Live: One Hadith a Day 11/18/26 - Ustadh Bukhari Meheng",
-      "date": "2026-11-18T19:00:07+00:00"
-    },
-    {
-      "id": "LKbis6msOus",
-      "title": "🔴 Live: The Reasons for the Revelation of the Quran 18.1.69 Lecturers: Ustadh Mubarak Mahammad Sa...",
-      "date": "2026-11-18T13:50:59+00:00"
-    },
-    {
-      "id": "Y38fX1H4La4",
-      "title": "🔴 Live: Healing through Inquiry 10/17/24, Ajarn Habeebullah Sri-Uthai and Khun Mustafa Meechawee",
-      "date": "2026-11-18T02:20:51+00:00"
-    },
-    {
-      "id": "EIK-RY62axU",
-      "title": "🔴 Live fisara 10/17/26",
-      "date": "2026-11-18T00:09:32+00:00"
     }
   ]
 }
