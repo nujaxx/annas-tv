@@ -1,26 +1,41 @@
 {
-  "updatedAt": "2026-11-21T07:56:21.793916+00:00",
+  "updatedAt": "2026-11-22T07:43:36.930471+00:00",
   "note": "อัปเดตอัตโนมัติโดย GitHub Actions",
   "videos": [
     {
+      "id": "toAIwgYVng0",
+      "title": "🔴 Live สวรรค์ในบ้าน 22.11.69 อ.อับดุลอาซีซ ขำเจริญ  ครู อิมรอน มูฮำหมัด",
+      "date": "2026-11-22T01:06:53+00:00"
+    },
+    {
+      "id": "C5MbxXBqSS0",
+      "title": "🔴 Live: Historical Lessons 11/21/2026 with Ustadh Hadees Boonmalert and Teacher Imran Muhammad",
+      "date": "2026-11-22T02:05:48+00:00"
+    },
+    {
+      "id": "5y-Q5pTIuyg",
+      "title": "🔴 Live เขาเล่าว่า..... 22.11.69 อ.นาเดร  ลามอ  ครู อิมรอน มูฮำหมัด",
+      "date": "2026-11-21T23:33:20+00:00"
+    },
+    {
+      "id": "1WuMXR5DINg",
+      "title": "🔴Live หนึ่งอักษรสิบความดี 22.11.69  อ.ฮาริษ  มังเดชะ",
+      "date": "2026-11-21T14:05:39+00:00"
+    },
+    {
       "id": "id83swRUH1c",
-      "title": "🔴 Live ศาสนบัญญัติ 21.11.69  อ.อับดุลลาตีฟ ตำราเรียง  ครู อิมรอน มูฮำหมัด",
-      "date": "2026-11-21T01:05:57+00:00"
+      "title": "🔴 Live: Islamic Law 11/21/2026 – A. Abdullatif Tamrariang, Teacher Imron Muhammad",
+      "date": "2026-11-21T20:11:41+00:00"
+    },
+    {
+      "id": "TwQpQCBIsUs",
+      "title": "🔴 Live: The Reasons Behind the Revelation of the Quran, 11/21/2026, Ajarn Mubarak Mahamadsoleh an...",
+      "date": "2026-11-21T14:01:25+00:00"
     },
     {
       "id": "67JuWWv2RG0",
       "title": "🔴 LIVE: Etiquette from the Heavens 11/20/26 Ustadz Ya'far Ruenpitak, Kru Hasman Amini",
       "date": "2026-11-21T03:26:26+00:00"
-    },
-    {
-      "id": "TwQpQCBIsUs",
-      "title": "🔴 Live มูลเหตุแห่งการประทานอัลกุรอาน 21.11.69 อ.มุบาร็อก  มะหะหมัดซอเเละ  ครู อิมรอน มูฮำหมัด",
-      "date": "2026-11-20T23:25:50+00:00"
-    },
-    {
-      "id": "CGXmIb3aQh0",
-      "title": "🔴Live หนึ่งอักษรสิบความดี 21.11.69 อ.ฮาริษ  มังเดชะ",
-      "date": "2026-11-20T14:49:54+00:00"
     },
     {
       "id": "ZG9C5I6X3OA",
@@ -61,21 +76,6 @@
       "id": "jsLtbCT2EM0",
       "title": "🔴 Live: Learning Toward the Truth 11/19/2026 Ustaz Abdeen Hadson, Kru Firdaus Kasem",
       "date": "2026-11-19T13:43:39+00:00"
-    },
-    {
-      "id": "UWIZIOP9KQo",
-      "title": "🔴 Live Al-Manhaj 10/18/2026 Ustadz Ya'far Ruenphithak, Teacher Hasman Amini",
-      "date": "2026-11-19T03:26:23+00:00"
-    },
-    {
-      "id": "XqHRWxATNlA",
-      "title": "🔴 Live Library 11/18/1983 Ajarn Hadees Boonmalert",
-      "date": "2026-11-18T22:53:15+00:00"
-    },
-    {
-      "id": "xcJNbrof7SU",
-      "title": "🔴 LIVE: Principles of Faith 11/18/2026, Ustadz Hadees Boonmalert",
-      "date": "2026-11-18T20:27:38+00:00"
     }
   ]
 }
