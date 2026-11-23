@@ -1,26 +1,51 @@
 {
-  "updatedAt": "2026-11-22T07:43:36.930471+00:00",
+  "updatedAt": "2026-11-23T08:32:25.036962+00:00",
   "note": "อัปเดตอัตโนมัติโดย GitHub Actions",
   "videos": [
     {
+      "id": "ci58DONfDy8",
+      "title": "🔴 Live ฮะดีษษุ้ลอะอฺกาม 23.11.69 อ.ยะฟัร รื่นพิทักษ์",
+      "date": "2026-11-23T05:22:03+00:00"
+    },
+    {
+      "id": "erUQvS91jJY",
+      "title": "🔴 Live วันละหะดีษ  23.11.69 อ.บุคอรี  เหมฮีม",
+      "date": "2026-11-23T01:06:35+00:00"
+    },
+    {
+      "id": "dtK1H0UWMjY",
+      "title": "🔴 Live โรงเรียนสลัฟ 22.11.69  อ.ยะฟัร รื่นพิทักษ์  ครูฮัสมัน  อะมีนี",
+      "date": "2026-11-23T03:12:14+00:00"
+    },
+    {
+      "id": "55M6axt9NXs",
+      "title": "🔴 Live สัจธรรม 23.11.69 อ.อาบีดีน ฮัดซัน ครูฟิรดาวซฺ กาเซ็ม",
+      "date": "2026-11-22T23:24:11+00:00"
+    },
+    {
+      "id": "SK5qSvusjbU",
+      "title": "🔴Live หนึ่งอักษรสิบความดี 22.11.69 อ.ฮาริษ  มังเดชะ",
+      "date": "2026-11-22T14:36:15+00:00"
+    },
+    {
+      "id": "M42ZwUkSSiw",
+      "title": "🔴 Live: Islamic Law 11/22/69, Ustadh Abdullatif, Tamra Riang, Kru Imron Muhammad",
+      "date": "2026-11-22T22:57:32+00:00"
+    },
+    {
       "id": "toAIwgYVng0",
-      "title": "🔴 Live สวรรค์ในบ้าน 22.11.69 อ.อับดุลอาซีซ ขำเจริญ  ครู อิมรอน มูฮำหมัด",
-      "date": "2026-11-22T01:06:53+00:00"
+      "title": "🔴 Live: Heaven at Home 11/22/2026, Ustadz Abdulaziz Khamcharoen & Kru Imran Muhammad",
+      "date": "2026-11-22T20:46:13+00:00"
+    },
+    {
+      "id": "5y-Q5pTIuyg",
+      "title": "🔴 LIVE: They said that... 11/22/2026, Ajarn Nader Lamo and Teacher Imron Muhammad",
+      "date": "2026-11-22T13:25:51+00:00"
     },
     {
       "id": "C5MbxXBqSS0",
       "title": "🔴 Live: Historical Lessons 11/21/2026 with Ustadh Hadees Boonmalert and Teacher Imran Muhammad",
       "date": "2026-11-22T02:05:48+00:00"
-    },
-    {
-      "id": "5y-Q5pTIuyg",
-      "title": "🔴 Live เขาเล่าว่า..... 22.11.69 อ.นาเดร  ลามอ  ครู อิมรอน มูฮำหมัด",
-      "date": "2026-11-21T23:33:20+00:00"
-    },
-    {
-      "id": "1WuMXR5DINg",
-      "title": "🔴Live หนึ่งอักษรสิบความดี 22.11.69  อ.ฮาริษ  มังเดชะ",
-      "date": "2026-11-21T14:05:39+00:00"
     },
     {
       "id": "id83swRUH1c",
@@ -51,31 +76,6 @@
       "id": "eCHoLHefSuA",
       "title": "🔴 Live: Here at Annas, for Annas 11/20/26",
       "date": "2026-11-20T12:18:32+00:00"
-    },
-    {
-      "id": "sixLmHC8Xl4",
-      "title": "🔴 Live ที่นี่อันนาสเพื่ออันนาส  20.11.69",
-      "date": "2026-11-20T02:31:13+00:00"
-    },
-    {
-      "id": "TlC97F8Ct5w",
-      "title": "🔴 Live Here at Annas, For Annas 11/19/26",
-      "date": "2026-11-20T00:27:54+00:00"
-    },
-    {
-      "id": "PgniI0-H0Xs",
-      "title": "🔴 Live: Essential Sunnah Knowledge 11/19/24 Ustadz Hadis Bunmalert",
-      "date": "2026-11-19T20:56:29+00:00"
-    },
-    {
-      "id": "NKtJT8t0WGY",
-      "title": "🔴 Live: The Aging World, 11/19/2026, Ustaz Bukhari Hemheem",
-      "date": "2026-11-19T19:37:27+00:00"
-    },
-    {
-      "id": "jsLtbCT2EM0",
-      "title": "🔴 Live: Learning Toward the Truth 11/19/2026 Ustaz Abdeen Hadson, Kru Firdaus Kasem",
-      "date": "2026-11-19T13:43:39+00:00"
     }
   ]
 }
