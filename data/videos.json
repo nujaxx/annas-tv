@@ -1,36 +1,61 @@
 {
-  "updatedAt": "2026-11-24T10:38:51.035591+00:00",
+  "updatedAt": "2026-11-25T09:29:50.551536+00:00",
   "note": "อัปเดตอัตโนมัติโดย GitHub Actions",
   "videos": [
     {
+      "id": "DwIifxCXcp4",
+      "title": "🔴 Live ห้องสมุด 11.11.69 อ.หะดีส  บุญมาเลิศ",
+      "date": "2026-11-25T08:22:11+00:00"
+    },
+    {
+      "id": "MbCh3g7owTY",
+      "title": "🔴 Live หลักศรัทธา 25.11.69 อ.หะดีส บุญมาเลิศ",
+      "date": "2026-11-25T05:20:41+00:00"
+    },
+    {
+      "id": "k0yJjP6BiDQ",
+      "title": "🔴 Live หลักศรัทธา 25.11.69 อ.หะดีส บุญมาเลิศ",
+      "date": "2026-11-25T01:01:40+00:00"
+    },
+    {
+      "id": "QccMnSJA2nc",
+      "title": "🔴 Live มูลเหตุแห่งการประทานอัลกุรอาน 25.11.69 อ.มุบาร็อก  มะหะหมัดซอเเละ ครูฟิรดาวซฺ กาเซ็ม",
+      "date": "2026-11-24T23:28:56+00:00"
+    },
+    {
+      "id": "nMgJbKM8ad8",
+      "title": "🔴 Live Fisara 11/24/2026",
+      "date": "2026-11-25T00:03:59+00:00"
+    },
+    {
+      "id": "6uoUWm-1kTc",
+      "title": "🔴Live หนึ่งอักษรสิบความดี 25.11.69 อ.ฮาริษ  มังเดชะ",
+      "date": "2026-11-24T12:02:43+00:00"
+    },
+    {
       "id": "Tx8Lu7eF1C8",
-      "title": "🔴 Live หัวใจที่สงบ 24.11.69 อ.ยาซีน สลักเพชร",
-      "date": "2026-11-24T09:49:00+00:00"
+      "title": "🔴 Live: A Peaceful Heart 11/24/2026, Ustaz Yaseen Salakphet",
+      "date": "2026-11-24T22:50:09+00:00"
     },
     {
       "id": "p2nlMkD0uww",
-      "title": "🔴 Live ศาสตร์แห่งวจนะท่านนบี 24.11.69 อ.ยะฟัร รื่นพิทักษ์",
-      "date": "2026-11-24T05:25:07+00:00"
+      "title": "🔴 Live: The Science of the Prophet's Sayings, 11/24/2026, Ustadz Yafar Ruenpitak",
+      "date": "2026-11-24T21:51:37+00:00"
     },
     {
       "id": "3Ld2Y-phKOA",
-      "title": "🔴 Live วันละหะดีษ  24.11.69  อ.รอกิ๊บ  ประดับญาติ",
-      "date": "2026-11-24T01:07:45+00:00"
+      "title": "🔴 Live One Hadith a Day 11/24/2026 Ustadz Roqib Pradubyat",
+      "date": "2026-11-24T19:18:08+00:00"
+    },
+    {
+      "id": "bRs1t7UXjys",
+      "title": "🔴 Live: The Truth 11/24/2026 - A. Abideen Hadson, Kru Firdaus Kasem",
+      "date": "2026-11-24T13:19:49+00:00"
     },
     {
       "id": "ZPHLqwbgTWg",
       "title": "🔴 Live: My Path, The Path of Islam 11/23/26, Ustadz Yafar Ruenpitak, Teacher Hasman Amini",
       "date": "2026-11-24T03:25:57+00:00"
-    },
-    {
-      "id": "bRs1t7UXjys",
-      "title": "🔴 Live สัจธรรม 24.11.69  อ.อาบีดีน ฮัดซัน  ครูฟิรดาวซฺ กาเซ็ม",
-      "date": "2026-11-23T23:25:04+00:00"
-    },
-    {
-      "id": "9sSC6xJtCg0",
-      "title": "🔴Live หนึ่งอักษรสิบความดี 23.11.69  อ.ฮาริษ  มังเดชะ",
-      "date": "2026-11-23T14:46:13+00:00"
     },
     {
       "id": "ci58DONfDy8",
@@ -51,31 +76,6 @@
       "id": "dtK1H0UWMjY",
       "title": "🔴 LIVE Salaf School 11/22/2026 Ar. Ya’far Ruenphithak, Teacher Hasman Amini",
       "date": "2026-11-23T03:12:14+00:00"
-    },
-    {
-      "id": "M42ZwUkSSiw",
-      "title": "🔴 Live: Islamic Law 11/22/69, Ustadh Abdullatif, Tamra Riang, Kru Imron Muhammad",
-      "date": "2026-11-22T22:57:32+00:00"
-    },
-    {
-      "id": "toAIwgYVng0",
-      "title": "🔴 Live: Heaven at Home 11/22/2026, Ustadz Abdulaziz Khamcharoen & Kru Imran Muhammad",
-      "date": "2026-11-22T20:46:13+00:00"
-    },
-    {
-      "id": "5y-Q5pTIuyg",
-      "title": "🔴 LIVE: They said that... 11/22/2026, Ajarn Nader Lamo and Teacher Imron Muhammad",
-      "date": "2026-11-22T13:25:51+00:00"
-    },
-    {
-      "id": "C5MbxXBqSS0",
-      "title": "🔴 Live: Historical Lessons 11/21/2026 with Ustadh Hadees Boonmalert and Teacher Imran Muhammad",
-      "date": "2026-11-22T02:05:48+00:00"
-    },
-    {
-      "id": "id83swRUH1c",
-      "title": "🔴 Live: Islamic Law 11/21/2026 – A. Abdullatif Tamrariang, Teacher Imron Muhammad",
-      "date": "2026-11-21T20:11:41+00:00"
     }
   ]
 }
