@@ -1,31 +1,61 @@
 {
-  "updatedAt": "2026-11-27T09:23:15.026572+00:00",
+  "updatedAt": "2026-11-28T08:38:55.986534+00:00",
   "note": "อัปเดตอัตโนมัติโดย GitHub Actions",
   "videos": [
     {
+      "id": "l4TCORZDYy8",
+      "title": "🔴 Live นานาสาระในอิสลาม 28.11.69  อ.หะดีส บุญมาเลิศ",
+      "date": "2026-11-28T08:02:55+00:00"
+    },
+    {
+      "id": "7CGAy16edeU",
+      "title": "🔴 Live ศาสนบัญญัติ 28.11.69  อ.อับดุลลาตีฟ ตำราเรียง  ครู อิมรอน มูฮำหมัด",
+      "date": "2026-11-28T06:59:35+00:00"
+    },
+    {
+      "id": "0dQ0PdumTBg",
+      "title": "🔴 Live มาใคร่ครวญกุรอานกันเถิด 28.11.69อ.บาซิ้ล สุขถาวร",
+      "date": "2026-11-28T01:04:19+00:00"
+    },
+    {
+      "id": "31ENYZ3wG-U",
+      "title": "🔴 Live Here at Annas, for Annas 11/27/26",
+      "date": "2026-11-28T03:15:03+00:00"
+    },
+    {
+      "id": "bg-VBDtA6RM",
+      "title": "🔴 Live มูลเหตุแห่งการประทานอัลกุรอาน 28.11.69อ.มุบาร็อก  มะหะหมัดซอเเละ ครู อิมรอน มูฮำหมัด",
+      "date": "2026-11-27T23:21:51+00:00"
+    },
+    {
+      "id": "psi7b_WhV08",
+      "title": "🔴 Live: Etiquette from the Heavens 11/27/26 - Ustadh Yafar Ruenpitak and Kru Hasman Amini",
+      "date": "2026-11-27T23:21:12+00:00"
+    },
+    {
+      "id": "TunO-ofkNh0",
+      "title": "🔴Live หนึ่งอักษรสิบความดี 28.11.69 อ.ฮาริษ  มังเดชะ",
+      "date": "2026-11-27T14:39:30+00:00"
+    },
+    {
       "id": "h1_eJ6nZSKs",
-      "title": "🔴 Live รัศมีเเห่งความรู้ 27.11.69 อ.หะดีส บุญมาเลิศ อ.บุคอรี  เหมฮีม",
-      "date": "2026-11-27T01:00:57+00:00"
+      "title": "🔴 Live: Radiance of Knowledge 11/27/26 - Ustadh Hadis Bunmalert and Ustadh Bukhari Hemheem",
+      "date": "2026-11-27T20:28:24+00:00"
+    },
+    {
+      "id": "jHlkMm6YhWM",
+      "title": "🔴 Live here at Unnas for Unnas 11/26/26",
+      "date": "2026-11-27T11:59:35+00:00"
     },
     {
       "id": "9MSdxa8Uqdc",
-      "title": "🔴 Live ที่นี่อันนาสเพื่ออันนาส  26.11.69",
+      "title": "🔴 Live here, Annas for Annas, 11/26/26",
       "date": "2026-11-27T02:43:50+00:00"
-    },
-    {
-      "id": "5am1oRC9laM",
-      "title": "🔴 Live ปฏิบัติแบบท่านนบี 27.11.69 อ.อับดุลค่อบีร สนนุกิจ",
-      "date": "2026-11-26T23:52:43+00:00"
     },
     {
       "id": "e5rk7WozZ7Q",
       "title": "🔴 Live Here at Annas, for Annas 11/26/26",
       "date": "2026-11-27T00:06:20+00:00"
-    },
-    {
-      "id": "jHlkMm6YhWM",
-      "title": "🔴 Live ที่นี่อันนาสเพื่ออันนาส  26.11.69",
-      "date": "2026-11-26T14:25:42+00:00"
     },
     {
       "id": "_14Ja4IVvzk",
@@ -46,36 +76,6 @@
       "id": "dt8ujnnyWtA",
       "title": "🔴 Live Al-Manhaj 11/25/2026 Ustadz Yafar Ruenpitak, Kru Hasman Amini",
       "date": "2026-11-26T02:43:34+00:00"
-    },
-    {
-      "id": "DwIifxCXcp4",
-      "title": "🔴 Live here at An-Nas for An-Nas 11/25/2026",
-      "date": "2026-11-25T22:50:59+00:00"
-    },
-    {
-      "id": "MbCh3g7owTY",
-      "title": "🔴 Live Principles of Faith 12/25/2026 Ajarn Hadees Boonmalert",
-      "date": "2026-11-25T20:26:29+00:00"
-    },
-    {
-      "id": "k0yJjP6BiDQ",
-      "title": "🔴 Live: Principles of Faith 11/25/2026 - Ajarn Hadees Boonmalert",
-      "date": "2026-11-25T18:20:11+00:00"
-    },
-    {
-      "id": "QccMnSJA2nc",
-      "title": "🔴 Live: The Reasons for the Revelation of the Quran (November 25, 1969) with Ustadh Mubarak Maham...",
-      "date": "2026-11-25T13:42:47+00:00"
-    },
-    {
-      "id": "nMgJbKM8ad8",
-      "title": "🔴 Live Fisara 11/24/2026",
-      "date": "2026-11-25T00:03:59+00:00"
-    },
-    {
-      "id": "Tx8Lu7eF1C8",
-      "title": "🔴 Live: A Peaceful Heart 11/24/2026, Ustaz Yaseen Salakphet",
-      "date": "2026-11-24T22:50:09+00:00"
     }
   ]
 }
